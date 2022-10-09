@@ -1,0 +1,40 @@
+{
+  "assignments": [
+    {
+      "id": 1,
+      "title": "Learn PHP",
+      "complete": true,
+      "tag": "Development"
+    },
+    {
+      "id": 2,
+      "title": "Learn JavaScript",
+      "complete": true,
+      "tag": "Development"
+    },
+    {
+      "id": 3,
+      "title": "Learn Laravel",
+      "complete": true,
+      "tag": "Framework"
+    },
+    {
+      "id": 4,
+      "title": "Learn Vue.js",
+      "complete": false,
+      "tag": "Framework"
+    },
+    {
+      "id": 5,
+      "title": "Learn Inertia.js",
+      "complete": false,
+      "tag": "Framework"
+    },
+    {
+      "id": 7,
+      "title": "Comprar Cursos",
+      "complete": false,
+      "tag": "Other"
+    }
+  ]
+}

@@ -24,14 +24,17 @@ export default {
 
     data() {
         return {
-            assignments: [
-                {id: 1, title: "Learn PHP", complete: true, tag: 'Development'},
-                {id: 2, title: "Learn JavaScript", complete: true, tag: 'Development'},
-                {id: 3, title: "Learn Laravel", complete: true, tag: 'Framework'},
-                {id: 4, title: "Learn Vue.js", complete: false, tag: 'Framework'},
-                {id: 5, title: "Learn Inertia.js", complete: false, tag: 'Framework'},
-            ]
+            assignments: [ ]
         }
+    },
+
+    created() {
+        fetch('http://localhost:3001/assignments')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.assignments = data;
+            });
     },
 
     computed: {
@@ -47,12 +50,37 @@ export default {
     },
 
     methods: {
-        add(name) {
+        add(name, tag) {
             this.assignments.push({
                 id: this.assignments.length + 1,
                 title: name,
                 complete: false,
+                tag: tag
             });
+
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    id: this.assignments.length + 1,
+                    title: name,
+                    complete: false,
+                    tag: tag
+                }),
+            }
+
+            fetch("http://localhost:3001/assignments", options)
+                .then((response) => response.text())
+                .then(
+                    (result) => {
+                        console.log(result);
+                    },
+                    (error) => {
+                        console.log(error);
+                        return;
+                    });
         }
     }
 }
