@@ -25,11 +25,11 @@ export default {
     data() {
         return {
             assignments: [
-                {id: 1, title: "Learn PHP", complete: true},
-                {id: 2, title: "Learn JavaScript", complete: true},
-                {id: 3, title: "Learn Laravel", complete: true},
-                {id: 4, title: "Learn Vue.js", complete: false},
-                {id: 5, title: "Learn Inertia.js", complete: false},
+                {id: 1, title: "Learn PHP", complete: true, tag: 'Development'},
+                {id: 2, title: "Learn JavaScript", complete: true, tag: 'Development'},
+                {id: 3, title: "Learn Laravel", complete: true, tag: 'Framework'},
+                {id: 4, title: "Learn Vue.js", complete: false, tag: 'Framework'},
+                {id: 5, title: "Learn Inertia.js", complete: false, tag: 'Framework'},
             ]
         }
     },
